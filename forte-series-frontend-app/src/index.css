@@ -1,0 +1,388 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.app {
+  max-width: 1200px;
+  width: 100%;
+  margin: 100px auto;
+  box-shadow: 0 0 5px #ccc;
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 30px 0;
+}
+
+.big-img img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  display: block;
+}
+
+.details .box {
+  max-width: 500px;
+  min-width: 290px;
+  margin: 25px;
+}
+
+.box .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.box .row span {
+  color: crimson;
+}
+
+.box .colors button {
+  color: crimson;
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.thumb {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.thumb img {
+  width: 90px;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  margin-right: 5px;
+  opacity: 0.7;
+  border-radius: 5px;
+}
+
+.thumb img.active {
+  opacity: 1;
+  border: 1px solid lightseagreen;
+}
+
+.box .cart {
+  background: #333;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 25px;
+  margin-top: 15px;
+}
+
+@media (max-width: 500px) {
+  .thumb {
+    height: 50px;
+  }
+}
+
+/*--------------------Navbar-------------- */
+.cart_icon {
+  margin-left: 90px;
+}
+.account_icon {
+  margin-left: 20px;
+}
+.cart_icon span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  top: 20px;
+  color: white;
+  border-radius: 50%;
+  z-index: 2;
+  text-align: center;
+}
+
+.container-fluid {
+  margin-left: 200px !important;
+}
+/* -------------Banner after Navbar------- */
+.banner {
+  position: relative;
+}
+.bannerImage {
+  display: block;
+  height: 500px;
+  width: 100%;
+  padding: 20px 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: fixed;
+  z-index: 1;
+}
+.featuredIn {
+  background-color: black;
+  width: 100%;
+  height: 120.77px;
+  position: absolute;
+  top: 430px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.featureIn_text {
+  color: white;
+  margin: 20px;
+}
+.featuredIn_image {
+  display: flex;
+  flex-direction: row;
+}
+
+/* -----------Shop Banner after hero banner-(HomePage)------------ */
+.shopBanner {
+  height: 600px;
+  width: 100%;
+  position: relative;
+}
+.shopBannerImage {
+  height: 100%;
+  background-image: url('../public/images/alex.webp');
+  width: 100%;
+  background-size: auto;
+  opacity: 0.75;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: fixed;
+}
+.shop_text {
+  position: absolute;
+  color: white;
+  top: 330px;
+  margin-left: 110px;
+  font-family: 'Century Gothic', sans-serif;
+
+  /* margin-top: 235px; */
+}
+.shopButton {
+  margin: 0;
+  padding: 5px 20px;
+  background-color: white;
+  font-family: 'Century Gothic', sans-serif;
+}
+.shopButton:hover {
+  background-color: black;
+  color: white;
+}
+
+/* ----------------Best Sellers Section-(HomePage)---------------------- */
+.textBox {
+  width: 280px;
+  height: auto;
+  background-color: black;
+  text-align: center;
+}
+.textOfIngredients {
+  color: white;
+  font-size: 17px;
+  font-family: 'Century Gothic', sans-serif;
+}
+.ingredients {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.centerImage,
+.textBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Easy_Restyle_Washout,
+.natural_based_ingredients {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+/* Product divs */
+.best_sellers_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-family: 'Century Gothic', sans-serif;
+  margin-top: 50px;
+}
+.best_sellers_text_para {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.best_sellers_products {
+  height: 553px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 40px;
+}
+.checked {
+  color: grey;
+}
+.productOfBestSellers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 262.5;
+  height: 473.09;
+}
+
+.bestSellersProductImage {
+  width: 270px;
+  height: 262.2px;
+}
+
+.bestSellersStars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.cartButton {
+  width: 157.5px;
+  height: 44px;
+  background-color: black;
+  color: white;
+}
+.bestSellersproductName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Century Gothic', sans-serif;
+  margin: 10px 0 10px 0;
+}
+
+/* ------------------Best Seller Product Detail--------------------- */
+
+.productDetailImage {
+  width: 587.5px;
+  height: 587.5px;
+}
+.productDetailinfo {
+  padding-top: 55px;
+}
+.productDetailName {
+  font-size: 34px;
+  font-family: 'Century Gothic', sans-serif;
+}
+.productDetailStars {
+  margin: 0;
+  padding: 0;
+}
+.productDetailPrice {
+  font-size: 34px;
+  font-family: 'Century Gothic', sans-serif;
+}
+
+/* ----------------------Register Page------------------------ */
+.register_page {
+  height: 1215px;
+  width: 568px;
+}
+
+/* -----------------------Login Page-------------------------- */
+.login_page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.login_heading {
+  font-family: 'Century Gothic', sans-serif;
+  margin-top: 30px;
+}
+.login_box,
+.register_box {
+  width: 537.5px;
+  height: 390px;
+  border: 1px solid #beb7b7a4;
+  padding-top: 30px;
+  margin-top: 50px;
+}
+.label_text {
+  font-size: 14px;
+  margin: 8px 12px;
+}
+.login_textField {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 12px;
+  display: inline-block;
+  border: 1px solid #ccbfbfa9;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.login_button {
+  background-color: white;
+  padding: 5px 20px 5px 20px;
+  width: 130px;
+  font-size: 20px;
+  margin: 15px 15px;
+  font-family: 'Century Gothic', sans-serif;
+}
+.login_button:hover {
+  background-color: black;
+  color: white;
+}
+.login_and_register_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.register_heading {
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Century Gothic', sans-serif;
+}
+.register_para {
+  font-family: 'Century Gothic', sans-serif;
+  padding-left: 20px;
+}

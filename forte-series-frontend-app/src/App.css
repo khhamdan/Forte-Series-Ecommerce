@@ -1,0 +1,14 @@
+.img-cover {
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  height: 400px !important;
+}
+
+.nav-link {
+  font-family: 'Century Gothic', sans-serif;
+}
+
+.collapse {
+  margin-left: 55px;
+}
