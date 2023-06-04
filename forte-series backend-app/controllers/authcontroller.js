@@ -81,7 +81,6 @@ export const loginController = async (req, res) => {
         firstname: user.firstname,
         lastname: user.lastname,
         email: user.email,
-        password: user.password,
       },
       token,
     });
@@ -93,4 +92,9 @@ export const loginController = async (req, res) => {
       error,
     });
   }
+};
+
+export const senduser = async (req, res) => {
+  let result = await userModel.find();
+  res.send(result);
 };

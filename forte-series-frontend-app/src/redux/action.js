@@ -1,9 +1,23 @@
-import { ADD_TO_CART } from './contant';
-
-export const cartData = (data) => {
-  console.log('action called ______>', data);
+export const ADD = (item) => {
   return {
-    type: ADD_TO_CART,
-    data: data,
+    type: 'ADD_CART',
+    payload: item,
+  };
+};
+
+// remove iteams
+export const DLT = (id) => {
+  return {
+    type: 'RMV_CART',
+    payload: id,
+  };
+};
+
+// remove individual iteam
+
+export const REMOVE = (iteam) => {
+  return {
+    type: 'RMV_ONE',
+    payload: iteam,
   };
 };

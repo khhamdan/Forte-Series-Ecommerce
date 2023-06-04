@@ -1,7 +1,104 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar';
+import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [invalid, SetInvalid] = useState(false);
+
+  const [emptyEmail, setEmptyEmail] = useState(false);
+  const [emptyPassword, setEmptyPassword] = useState(false);
+  const [pass, setPass] = useState(false);
+  const [data, setData] = useState([]);
+  const [alldata, setAlldata] = useState([]);
+
+  // we are getting all users data
+  const getallData = async () => {
+    let result = await fetch('http://localhost:8080/api/v1/auth/getuser');
+    result = await result.json();
+    if (result) {
+      console.log(' result in get data login : ', result);
+    }
+    setData(result);
+  };
+
+  const saveRecord = async () => {
+    if (email) {
+      setEmptyEmail(false);
+      SetInvalid(false);
+      setPass(false);
+    } else {
+      setEmptyEmail(true);
+      SetInvalid(false);
+      setPass(false);
+    }
+
+    if (password) {
+      setEmptyPassword(false);
+      SetInvalid(false);
+      setPass(false);
+    } else {
+      setEmptyPassword(true);
+      SetInvalid(false);
+      setPass(false);
+    }
+
+    let result = await fetch('http://localhost:8080/api/v1/auth/Login', {
+      method: 'Post',
+      body: JSON.stringify({ email, password }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    result = await result.json();
+    console.log('result : ', result);
+    console.log('result.message :   ', result.message);
+
+    if (result.message == 'Password does not match') {
+      setPass(true);
+      SetInvalid(false);
+    } else if (result.message == 'Invalid email address') {
+      setPass(false);
+      SetInvalid(true);
+    } else if (result.message === 'Loggedin Successfully') {
+      setPass(false);
+      SetInvalid(false);
+
+      let fdata = data.find((x) => x.email == email);
+
+      // localStorage.setItem('user', result.token);
+
+      // let token = result.token;
+      // let res = await fetch('http://localhost:8080/api/v1/auth/dummy', {
+      //   method: 'Get',
+      //   headers: {
+      //     Authorization: `${token}`,
+      //   },
+      // });
+      // res = await res.json();
+
+      // if (res.message == 'You have protected access rights') {
+      //   localStorage.setItem('user', JSON.stringify({ email, password }));
+
+      if (fdata) {
+        navigate('/');
+      }
+    } else {
+      setPass(false);
+      SetInvalid(false);
+    }
+  };
+
+  useEffect(() => {
+    localStorage.clear();
+    getallData();
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -12,23 +109,52 @@ const Login = () => {
         </div>
         <div className="login_and_register_box">
           <div className="login_box">
-            <label className="label_text">Email</label>
+            <div>
+              <label className="label_text" htmlFor="loginName">
+                Email
+              </label>
+              <br />
+              <input
+                type="email"
+                name="email"
+                id="loginName"
+                placeholder="Email"
+                className="login_textField"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {emptyEmail && (
+                <h6 className="text-danger">Please enter Email !</h6>
+              )}
+              {invalid && (
+                <h5 className="text-danger ">Invalid email address !</h5>
+              )}
+            </div>
+
             <br />
-            <input
-              type="text"
-              placeholder="Email"
-              className="login_textField"
-            />
+            <div>
+              <label className="label_text" htmlFor="loginPassword">
+                Password
+              </label>
+              <br />
+              <input
+                type="password"
+                name="password"
+                placeholder="Type your password"
+                id="loginPassword"
+                className="login_textField"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              {emptyPassword && (
+                <h6 className="text-danger">Please enter Password !</h6>
+              )}
+              {pass && (
+                <h6 className="text-danger">Password does not match !</h6>
+              )}
+            </div>
             <br />
-            <label className="label_text">Password</label>
-            <br />
-            <input
-              type="text"
-              placeholder="Password"
-              className="login_textField"
-            />
-            <br />
-            <button className="login_button">Login</button>
+            <button className="login_button" onClick={saveRecord} type="submit">
+              Login
+            </button>
           </div>
           <div className="register_box">
             <div>
@@ -48,6 +174,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import BestSellerProductListDB from '../../data/BestSellersProductData';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { cartData } from '../../redux/action';
+import { ADD } from '../../redux/action';
 const BestSellersSection = () => {
   const dispatch = useDispatch();
   return (
@@ -99,7 +99,7 @@ const BestSellersSection = () => {
                 <div>
                   <button
                     className="cartButton"
-                    onClick={() => dispatch(cartData(bsproduct))}
+                    onClick={() => dispatch(ADD(bsproduct))}
                   >
                     Add to Cart
                   </button>

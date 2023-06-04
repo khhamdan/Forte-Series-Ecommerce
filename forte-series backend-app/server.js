@@ -4,6 +4,7 @@ import color from 'colors';
 import dbConnection from './config/db.js';
 import authRoute from './routes/authRoute.js';
 import morgan from 'morgan';
+import cors from 'cors';
 
 // rest object
 const app = express();
@@ -14,6 +15,7 @@ dotenv.config();
 //Datbase connection called
 dbConnection();
 // this json should be before the line of route
+app.use(cors());
 app.use(express.json());
 app.use('/api/v1/auth', authRoute);
 app.use(morgan('dev'));

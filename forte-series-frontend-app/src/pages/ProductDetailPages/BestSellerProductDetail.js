@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import BestSellerProductListDB from '../../data/BestSellersProductData';
 import { useDispatch } from 'react-redux';
-import { cartData } from '../../redux/action';
+import { ADD } from '../../redux/action';
 // import AsNavFor from '../../components/productDetailComponents/AsNavFor';
 const BestSellerProductDetail = () => {
   let { id } = useParams();
@@ -29,10 +29,7 @@ const BestSellerProductDetail = () => {
               <span>27 Reviews</span>
             </div>
             <div className="productDetailPrice">${fData.price}</div>
-            <button
-              className="cartButton"
-              onClick={() => dispatch(cartData(fData))}
-            >
+            <button className="cartButton" onClick={() => dispatch(ADD(fData))}>
               Add to Cart
             </button>
           </div>

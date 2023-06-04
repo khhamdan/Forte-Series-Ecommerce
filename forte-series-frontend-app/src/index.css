@@ -122,24 +122,26 @@ code {
 /* -------------Banner after Navbar------- */
 .banner {
   position: relative;
-}
-.bannerImage {
-  display: block;
-  height: 500px;
+  height: 600px;
   width: 100%;
-  padding: 20px 0;
+}
+.banner_image {
+  z-index: 1;
+  height: 100%;
+  background-image: url('../public/images/hero-banner.webp');
+  width: 100%;
+  background-size: auto;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: fixed;
-  z-index: 1;
 }
 .featuredIn {
   background-color: black;
   width: 100%;
   height: 120.77px;
   position: absolute;
-  top: 430px;
+  top: 480px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -385,4 +387,9 @@ code {
 .register_para {
   font-family: 'Century Gothic', sans-serif;
   padding-left: 20px;
+}
+/* ----------CART----------- */
+.cartproductDetailImage {
+  width: 250px;
+  height: 250px;
 }

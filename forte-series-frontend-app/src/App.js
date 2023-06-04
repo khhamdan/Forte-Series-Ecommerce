@@ -7,6 +7,7 @@ import AllForteProducts from './pages/ProductPages/AllForteProducts';
 import BestSellerProductDetail from './pages/ProductDetailPages/BestSellerProductDetail';
 import Register from './pages/account/Register';
 import Login from './pages/account/Login';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           path="/bestSellersProductDetail/:id"
           element={<BestSellerProductDetail />}
         />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/product" element={<Products />} />
         <Route path="/register" element={<Register />} />

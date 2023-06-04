@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const productData = useSelector((state) => state.cartAbc);
+  const productData = useSelector((state) => state.cartreducer.carts);
 
   return (
     <>
@@ -66,8 +66,10 @@ const Navbar = () => {
               </li>
             </ul>
             <div className="cart_icon">
-              <span>{productData.length}</span>
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <Link to={'/cart'}>
+                <span>{productData.length}</span>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              </Link>
             </div>
             <div className="account_icon">
               <Link to={'/login'}>
