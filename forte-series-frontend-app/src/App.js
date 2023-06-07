@@ -2,7 +2,6 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-import Products from './pages/Products';
 import AllForteProducts from './pages/ProductPages/AllForteProducts';
 import BestSellerProductDetail from './pages/ProductDetailPages/BestSellerProductDetail';
 import Register from './pages/account/Register';
@@ -21,7 +20,6 @@ function App() {
         />
         <Route path="/cart" element={<Cart />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/product" element={<Products />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>

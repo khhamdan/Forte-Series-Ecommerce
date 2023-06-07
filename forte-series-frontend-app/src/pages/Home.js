@@ -7,13 +7,15 @@ import BestSellersSection from '../components/homeComponents/BestSellersSection'
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
+    <>
+      <div className="homeNavbar">
+        <Navbar />
+      </div>
       <HeroBanner />
       <ShopBanner />
       <BestSellersSection />
       <FounderIntro />
-    </div>
+    </>
   );
 };
 

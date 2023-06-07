@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar';
 import { ToastContainer, toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -169,7 +170,9 @@ const Login = () => {
                 well as pre-filled forms during checkout on subsequent orders.
               </p>
             </div>
-            <button className="login_button">Register</button>
+            <Link to={'/register'}>
+              <button className="login_button">Register</button>
+            </Link>
             <div></div>
           </div>
         </div>

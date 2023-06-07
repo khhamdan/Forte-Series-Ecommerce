@@ -119,6 +119,14 @@ code {
 .container-fluid {
   margin-left: 200px !important;
 }
+.homeNavbar {
+  position: sticky;
+  top: 0;
+}
+.navbar {
+  background-color: white !important;
+}
+
 /* -------------Banner after Navbar------- */
 .banner {
   position: relative;
@@ -378,16 +386,44 @@ code {
   align-items: center;
   gap: 20px;
 }
+
+/* -----------Register-------------- */
+
+.register_page_box {
+  width: 537.5px;
+  height: 540px;
+  border: 1px solid #beb7b7a4;
+  padding-top: 30px;
+  padding-left: 35px;
+  margin-top: 50px;
+}
+.register_page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
 .register_heading {
   font-family: 'Century Gothic', sans-serif;
   font-size: 20px;
   text-align: center;
-  font-family: 'Century Gothic', sans-serif;
 }
 .register_para {
   font-family: 'Century Gothic', sans-serif;
   padding-left: 20px;
 }
+.register_button {
+  background-color: white;
+  padding: 5px 20px 5px 20px;
+  width: 130px;
+  font-size: 20px;
+  margin: 15px 15px;
+  font-family: 'Century Gothic', sans-serif;
+}
+
 /* ----------CART----------- */
 .cartproductDetailImage {
   width: 250px;
